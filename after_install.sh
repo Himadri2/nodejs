@@ -42,6 +42,7 @@ echo "Running container '$CONTAINER_NAME' in detached mode with restart=always..
 docker run -d \
   --name "$CONTAINER_NAME" \
   --restart=always \
+  -p 5000:5000 \
   "$ECR_REPO_URL:$IMAGE_TAG" || error_exit "Failed to run container."
 
 echo "Container '$CONTAINER_NAME' is now running with auto-restart enabled."
